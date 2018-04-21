@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import moment from 'moment';
 import Moment from 'react-moment';
 
 class ViewItem extends Component{
