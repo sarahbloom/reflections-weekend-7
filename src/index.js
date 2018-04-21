@@ -14,13 +14,13 @@ const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga(){
     console.log('rootSaga loaded');
-    yield takeEvery("FETCH_REFLECTIONS", getReflectionSaga)
+    yield takeEvery('FETCH_REFLECTIONS', getReflectionSaga);
+    yield takeEvery('POST_REFLECTION', postReflectionSaga)
 }
 
 function* getReflectionSaga(action){
     console.log('getReflectionSaga loaded');
     console.log(action);
-    
     try {
         const reflectionResponse = yield call(axios.get, '/api/view');
         yield put({
@@ -32,16 +32,28 @@ function* getReflectionSaga(action){
     }
 }//end getReflectionSaga
 
+function* postReflectionSaga(action){
+    console.log('postReflectionSaga loaded');
+    console.log(action);
+    try {
+        yield call(axios.post, '/api/add', action.payload);
+        yield put({
+            type: 'FETCH_REFLECTIONS'
+        })
+    } catch (err) {
+        console.log('error in PUT new reflection', err);
+    }
+}// end postReflectionSaga
+
 const reflectionList = (state=[], action) =>{
     switch (action.type) {
         case "DISPLAY_REFLECTIONS":
             console.log('in reducer - DISPLAY_REFLECTIONS');
-        
             return action.payload;
         default:
             return state;
-    }
-}
+    }// end switch statement
+} //end reflectionList
 
 const store = createStore(
     combineReducers({ reflectionList}),
