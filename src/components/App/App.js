@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ReflectionsList from '../ViewReflections/ViewList/ViewList.js';
+import AddReflection from '../AddReflection/AddForm/AddForm.js';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class App extends Component {
@@ -15,10 +16,8 @@ class App extends Component {
             <Link to='/view'>View all reflections </Link>
           </header>
           <br/>
-          {/* TODO: ADD post reflection docs */}
-          {/* <Route exact path = '/'component={AddReflection} /> */}
+          <Route exact path = '/' component={AddReflection} />
           <Route exact path='/view' component={ReflectionsList} />
-          <ReflectionsList />
         </div>
       </Router>
     );
