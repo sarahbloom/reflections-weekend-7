@@ -1,0 +1,15 @@
+.textClass{
+    float: left;
+    height: 250px;
+    width: 250px;
+    background-color: rgb(166, 105, 235);
+    margin-left: 10px;
+    margin-top: 10px;
+}
+/* TODO: FIX spacing from bottom */
+#delete{
+    margin-bottom: 0px;
+}
+#bookmark {
+    margin-bottom: 0px;
+}

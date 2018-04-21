@@ -9,7 +9,7 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { call, put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
-
+import 'typeface-roboto';
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga(){
