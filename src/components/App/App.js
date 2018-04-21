@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
+import ReflectionsList from '../ViewReflections/ViewList/ViewList.js'
 
 class App extends Component {
   render() {
@@ -11,6 +11,7 @@ class App extends Component {
           <h4><i>Reflection Board</i></h4>
         </header>
         <br/>
+        <ReflectionsList />
       </div>
     );
   }

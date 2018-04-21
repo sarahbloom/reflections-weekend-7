@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
- app.use('/view', viewReflectionRouter);
- app.use('/add', addReflectionRouter);
+app.use('/api/view', viewReflectionRouter);
+app.use('/api/add', addReflectionRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(port, function () {
