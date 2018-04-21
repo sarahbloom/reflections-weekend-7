@@ -32,7 +32,7 @@ function* getReflectionSaga(action){
     }
 }//end getReflectionSaga
 
-const plantList = (state=[], action) =>{
+const reflectionList = (state=[], action) =>{
     switch (action.type) {
         case "DISPLAY_REFLECTIONS":
             console.log('in reducer - DISPLAY_REFLECTIONS');
@@ -44,7 +44,7 @@ const plantList = (state=[], action) =>{
 }
 
 const store = createStore(
-    combineReducers({plantList}),
+    combineReducers({ reflectionList}),
     applyMiddleware(sagaMiddleware, logger),
 ); //end store
 

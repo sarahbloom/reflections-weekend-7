@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReflectionsList from '../ViewReflections/ViewList/ViewList.js'
+import ReflectionsList from '../ViewReflections/ViewList/ViewList.js';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Oh, the places you've been</h1>
-          <h4><i>Reflection Board</i></h4>
-        </header>
-        <br/>
-        <ReflectionsList />
-      </div>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Oh, the places you've been</h1>
+            <h4><i>Reflection Board</i></h4>
+            <Link to='/'>Add a reflection </Link>
+            <Link to='/view'>View all reflections </Link>
+          </header>
+          <br/>
+          {/* TODO: ADD post reflection docs */}
+          {/* <Route exact path = '/'component={AddReflection} /> */}
+          <Route exact path='/view' component={ReflectionsList} />
+          <ReflectionsList />
+        </div>
+      </Router>
     );
   }
 }
