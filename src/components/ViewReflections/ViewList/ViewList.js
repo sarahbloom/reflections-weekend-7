@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import '../ViewList/ViewList.js';
+import ViewItem from '../ViewItem/ViewItem.js'
 // import axios from 'axios';
 
 class ReflectionsList extends Component{
@@ -15,10 +15,15 @@ class ReflectionsList extends Component{
 
     render(){
         //map out all reflections
+        let ReflectionListArray = this.props.reduxState.reflectionList.map(listItem =>{
+            // return <div> {listItem.topic} {listItem.description} {listItem.date} </div>
+            return < ViewItem key={listItem.id} listItem={listItem} />
+        })
+
         return(
             <div>
                 <p>all reflections will display here</p>
-                <pre>{JSON.stringify(this.props.reduxState)}</pre>
+                {ReflectionListArray}
             </div>
         )
     }// end render
