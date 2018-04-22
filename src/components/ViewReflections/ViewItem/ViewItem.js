@@ -88,7 +88,7 @@ class ViewItem extends Component {
                         onClick={() => this.setState({ on: !this.state.on })}
                     >
                         < ToggleIcon
-                            on={state.on}
+                            on={this.state.on}
                             onIcon={<Bookmark />}
                             offIcon={<BookmarkBorder />}
                         />
