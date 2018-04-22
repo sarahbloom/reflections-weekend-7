@@ -23,7 +23,7 @@ npm run client
 - [x] Display a list of the existing reflections. 
 - [x] The most recently added reflection should appear at the top of the list.
 - [x] Allow the user to delete existing reflections. 
-- [] Prompt the user to confrim prior to deleting the reflection from the database. 
+- [x] Prompt the user to confrim prior to deleting the reflection from the database. 
 - [] Add a button that allows users to bookmark a reflection.
 
 ### ADD NEW REFLECTION

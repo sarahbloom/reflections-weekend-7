@@ -20,7 +20,6 @@ function* rootSaga(){
 
 //get reflections currently in the DB
 function* getReflectionSaga(action){
-    console.log('getReflectionSaga loaded');
     console.log(action);
     try {
         const reflectionResponse = yield call(axios.get, '/api/view');
@@ -35,8 +34,7 @@ function* getReflectionSaga(action){
 
 //add a new reflection to the DB
 function* postReflectionSaga(action){
-    console.log('postReflectionSaga loaded');
-    console.log(action);
+    // console.log(action);
     try {
         yield call(axios.post, '/api/add', action.payload);
         yield put({

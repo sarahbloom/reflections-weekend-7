@@ -7,6 +7,8 @@ import IconButton from 'material-ui/IconButton';
 import Button from 'material-ui/Button';
 import { Bookmark, BookmarkBorder, Delete } from 'material-ui-icons';
 import axios from 'axios';
+import ToggleIcon from 'material-ui-toggle-icon'
+
 import Dialog, {
     DialogActions,
     DialogContent,
@@ -15,11 +17,13 @@ import Dialog, {
 } from 'material-ui/Dialog';
 
 class ViewItem extends Component {
-
-    state = {
-        open: false,
-    };
-
+    constructor(props){
+        super(props);
+        this.state = {
+            open: false,
+        };
+    }
+    
     handleClickOpen = () => {
         this.setState({ open: true });
     };
@@ -54,19 +58,22 @@ class ViewItem extends Component {
                 
                     <IconButton id="delete" size="small" onClick={this.handleClickOpen}>
                     <Delete /></IconButton>
-                        <Dialog
-                            open={this.state.open}
-                            onClose={this.handleClose}
-                            aria-labelledby="alert-dialog-title"
-                            aria-describedby="alert-dialog-description"
-                        >
+                    <Dialog
+                        open={this.state.open}
+                        onClose={this.handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title">
+                            {"Please confirm you want to delete the reflection"}
+                        </DialogTitle>
 
-                        <DialogTitle id="alert-dialog-title">{"Please confirm you want to delete the reflection"}</DialogTitle>
                         <DialogContent>
                             <DialogContentText id="alert-dialog-description">
                                 You are not able to recover the reflection once it has been deleted. 
                             </DialogContentText>
                         </DialogContent>
+
                         <DialogActions>
                             <Button onClick={this.handleClose} color="primary">
                                 Keep Reflection
@@ -75,10 +82,20 @@ class ViewItem extends Component {
                                 Delete Reflection
                             </Button>
                         </DialogActions>
+                    </Dialog>
 
-                        </Dialog>
-                    <IconButton id="bookmark" size="small" >
-                        <BookmarkBorder /></IconButton>
+                    <IconButton
+                        onClick={() => this.setState({ on: !this.state.on })}
+                    >
+                        < ToggleIcon
+                            on={state.on}
+                            onIcon={<Bookmark />}
+                            offIcon={<BookmarkBorder />}
+                        />
+                    </IconButton>
+
+                    {/* <IconButton id="bookmark" size="small" >
+                        <BookmarkBorder /></IconButton> */}
                 </div>
             </div>
         )
