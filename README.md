@@ -17,9 +17,17 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 npm run client
 ```
 
+
+- [x] Create a form that allows users to add a new reflection. 
+- [x] A new reflection should be added in the database with the current date by default. 
+- [x] Display a list of the existing reflections. 
+- [x] The most recently added reflection should appear at the top of the list.
+- [x] Allow the user to delete existing reflections. 
+- [] Prompt the user to confrim prior to deleting the reflection from the database. 
+- [] Add a button that allows users to bookmark a reflection.
+
 ### ADD NEW REFLECTION
 
-> NOTE: As a baseline requirement, you should use Redux to store your data. Using Sagas is a **stretch goal**.
 
 Create a form that allows users to add a new reflection. A new reflection should be added in the database with the current date by default. 
 
@@ -31,7 +39,7 @@ Display a list of the existing reflections. The most recently added reflection s
 
 ![display reflections](wireframes/screen-two.png)
 
-## STRETCH GOALS
+## FUTURE FEATURES
 
 - Update this README.md to describe the project in your own words
 - Deploy your project to Heroku
