@@ -27,7 +27,6 @@ router.delete('/:id', (req, res)=>{
 
 //toggle Bookmark true/false in SQL
 router.put('/', (req, res)=>{
-    console.log('toggle bookmark request');
     console.log('put request', req.body)
     let reflectionToUpdate = req.body;
     let queryText = `UPDATE "reflection" SET "bookmarked" = $1 WHERE "id" = $2;`;

@@ -21,28 +21,28 @@ class ViewItem extends Component {
         super(props);
         this.state = {
             open: false,
-            bookmarked: false,
         };
     }
 
-    toggleBookmark = () =>{
+    toggleBookmark = (listItem) =>{
         console.log('clicked bookmark PUT', this.props.listItem);
-        console.log(this.state.bookmarked);
-        axios.put(`/api/view/?=${this.props.listItem.id}`)
+        this.props.listItem.bookmarked = !this.props.listItem.bookmarked;
+
+        axios.put(`/api/view/?=${this.props.listItem.id}`, this.props.listItem)
             .then((response) => {
-                console.log('success in PUT');
-                this.setState({ 
-                    bookmarked: !this.state.bookmarked 
-                }).this.props.dispatch({
-                type: "DISPLAY_REFLECTIONS",
-                payload: this.state.bookmarked
-            })
+                console.log('response', response);
+                console.log('bookmark status', this.props.listItem.bookmarked);
+                
+                    // .this.props.dispatch({
+                    //     type: "DISPLAY_REFLECTIONS",
+                    //     this.props.listItem
+                    // })
             }).catch((err)=>{
                 console.log('error in PUT', err);
-        })
+        })//end catch and axios call
     }//end toggleBookmark
 
-    handleClickOpen = (bookmarkReflection) => {
+    handleClickOpen = () => {
         this.setState({ open: true });
     };
 
@@ -104,7 +104,7 @@ class ViewItem extends Component {
 
                     <IconButton onClick={this.toggleBookmark}>
                         < ToggleIcon
-                            on={this.state.bookmarked}
+                            on={this.state.on}
                             onIcon={<Bookmark />}
                             offIcon={<BookmarkBorder />}
                         />
