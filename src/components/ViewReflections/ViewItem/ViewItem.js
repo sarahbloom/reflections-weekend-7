@@ -3,34 +3,10 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import './ViewItem.css'
-import IconButton from 'material-ui/IconButton';
-import Button from 'material-ui/Button';
-import { Bookmark, BookmarkBorder, Delete } from 'material-ui-icons';
-import axios from 'axios';
-import ToggleIcon from 'material-ui-toggle-icon';
 import DeleteButton from './DeleteButton.js'
-
-import Dialog, {
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-} from 'material-ui/Dialog';
+import ToggleButton from './ToggleButton.js'
 
 class ViewItem extends Component {
-
-    toggleBookmark = (listItem) =>{
-        this.props.listItem.bookmarked = !this.props.listItem.bookmarked;
-        axios.put(`/api/view/?=${this.props.listItem.id}`, this.props.listItem)
-            .then((response) => {
-            // console.log('bookmark status', this.props.listItem.bookmarked);
-                this.props.dispatch({
-                    type: "DISPLAY_UPDATED_REFLECTIONS",
-                })
-            }).catch((err)=>{
-                console.log('error in PUT', err);
-        })//end catch and axios call
-    }//end toggleBookmark
 
     render() {
 
@@ -43,13 +19,7 @@ class ViewItem extends Component {
                 
                     < DeleteButton listItem = {this.props.listItem}/>
 
-                    <IconButton onClick={this.toggleBookmark}>
-                        < ToggleIcon
-                            on={this.props.listItem.bookmarked}
-                            onIcon={<Bookmark />}
-                            offIcon={<BookmarkBorder />}
-                        />
-                    </IconButton>
+                    <ToggleButton listItem={this.props.listItem} />
 
                 </div>
             </div>
