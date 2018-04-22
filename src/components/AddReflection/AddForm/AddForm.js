@@ -46,7 +46,7 @@ class AddReflection extends Component{
                     {/* TODO: make a fixed text area */}
                     {/* <textarea rows="7" cols="60" > */}
                     <input type="text" onChange={this.handleNameChange('description')} 
-                            defaultValue={this.state.newReflection.description}/>
+                            value={this.state.newReflection.description}/>
                     {/* </textarea> */}
                     <br/>
                     <br/>

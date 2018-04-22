@@ -13,11 +13,12 @@ import 'typeface-roboto';
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga(){
-    console.log('rootSaga loaded');
+    // console.log('rootSaga loaded');
     yield takeEvery('FETCH_REFLECTIONS', getReflectionSaga);
-    yield takeEvery('POST_REFLECTION', postReflectionSaga)
+    yield takeEvery('POST_REFLECTION', postReflectionSaga);
 }
 
+//get reflections currently in the DB
 function* getReflectionSaga(action){
     console.log('getReflectionSaga loaded');
     console.log(action);
@@ -32,6 +33,7 @@ function* getReflectionSaga(action){
     }
 }//end getReflectionSaga
 
+//add a new reflection to the DB
 function* postReflectionSaga(action){
     console.log('postReflectionSaga loaded');
     console.log(action);
@@ -45,11 +47,15 @@ function* postReflectionSaga(action){
     }
 }// end postReflectionSaga
 
+//reducer - reflectionList is the array of reflections
 const reflectionList = (state=[], action) =>{
     switch (action.type) {
         case "DISPLAY_REFLECTIONS":
-            console.log('in reducer - DISPLAY_REFLECTIONS');
+            // console.log('in reducer - DISPLAY_REFLECTIONS');
             return action.payload;
+        case "DISPLAY_UPDATED_REFLECTIONS":
+            return state.filter((reflection) => 
+            { return reflection.id !== action.payload }) 
         default:
             return state;
     }// end switch statement

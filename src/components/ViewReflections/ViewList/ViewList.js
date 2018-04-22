@@ -7,7 +7,6 @@ class ReflectionsList extends Component {
 
     // //load past reflections on DOM on component mounted
     componentDidMount = () => {
-        console.log('component mounted');
         this.props.dispatch({
             type: "FETCH_REFLECTIONS",
         })
