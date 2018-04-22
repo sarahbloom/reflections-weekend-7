@@ -23,8 +23,24 @@ class ViewItem extends Component {
             open: false,
         };
     }
-    
-    handleClickOpen = () => {
+
+    toggleBookmark = (listItem) =>{
+        console.log('clicked bookmark PUT', this.props.listItem);
+        axios.put(`/gallery/${this.props.listItem.id}`)
+            .then((response) => {
+                console.log('success in PUT');
+                this.setState({ 
+                on: !this.state.on 
+            })
+            this.props.dispatch({
+                type: "DISPLAY_REFLECTIONS",
+            }).catch((err)=>{
+                console.log('error in PUT', err);
+            })
+        })
+    }
+
+    handleClickOpen = (bookmarkReflection) => {
         this.setState({ open: true });
     };
 
@@ -37,7 +53,7 @@ class ViewItem extends Component {
         console.log('clicked delete', this.props.listItem.id);
         axios.delete(`/api/view/${this.props.listItem.id}`)
             .then((response) => {
-                console.log('photo deleted');
+                console.log('reflection deleted');
                 this.props.dispatch({
                     type: "DISPLAY_UPDATED_REFLECTIONS",
                     payload: this.props.listItem.id
@@ -84,9 +100,7 @@ class ViewItem extends Component {
                         </DialogActions>
                     </Dialog>
 
-                    <IconButton
-                        onClick={() => this.setState({ on: !this.state.on })}
-                    >
+                    <IconButton onClick={this.toggleBookmark}>
                         < ToggleIcon
                             on={this.state.on}
                             onIcon={<Bookmark />}
@@ -94,8 +108,6 @@ class ViewItem extends Component {
                         />
                     </IconButton>
 
-                    {/* <IconButton id="bookmark" size="small" >
-                        <BookmarkBorder /></IconButton> */}
                 </div>
             </div>
         )
