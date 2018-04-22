@@ -6,10 +6,9 @@
     margin-left: 10px;
     margin-top: 10px;
 }
-/* TODO: FIX spacing from bottom */
-#delete{
-    margin-bottom: 0px;
-}
-#bookmark {
-    margin-bottom: 0px;
-}
+
+/* TODO: figure out spacing */
+/* .buttonClass{
+    background-color: rgb(120, 75, 172);
+    margin-bottom: 50px;
+} */

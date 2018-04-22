@@ -17,9 +17,10 @@ class ViewItem extends Component {
                     <h4>{this.props.listItem.description} </h4>
                     <p> Date of event: <Moment format='MMMM Do, YYYY'>{this.props.listItem.date}</Moment> </p>
                 
-                    < DeleteButton listItem = {this.props.listItem}/>
-
-                    <ToggleButton listItem={this.props.listItem} />
+                    <div className = "buttonClass">
+                        <DeleteButton listItem = {this.props.listItem}/>
+                        <ToggleButton listItem={this.props.listItem} />
+                    </div>
 
                 </div>
             </div>
