@@ -19,6 +19,12 @@ class AddReflection extends Component{
             type: 'POST_REFLECTION', 
             payload: this.state.newReflection
         })
+        this.setState({
+            newReflection: {
+                topic: "",
+                description: ""
+            }
+        })
     }// end addNewReflection
     
     handleNameChange = (propertyName) =>{

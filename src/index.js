@@ -49,7 +49,7 @@ function* postReflectionSaga(action){
 const reflectionList = (state=[], action) =>{
     switch (action.type) {
         case "DISPLAY_REFLECTIONS":
-            // console.log('in reducer - DISPLAY_REFLECTIONS');
+            console.log('in reducer - DISPLAY_REFLECTIONS', action);
             return action.payload;
         case "DISPLAY_UPDATED_REFLECTIONS":
             return state.filter((reflection) => 
