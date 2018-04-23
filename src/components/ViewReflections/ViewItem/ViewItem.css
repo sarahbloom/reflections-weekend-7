@@ -8,7 +8,16 @@
 }
 
 /* TODO: figure out spacing */
-/* .buttonClass{
-    background-color: rgb(120, 75, 172);
-    margin-bottom: 50px;
-} */
+.buttonClass{
+    align-content: center;
+       display:flex;
+       flex-direction:row;
+       margin-TOP: 80px;
+    /* background-color: rgb(120, 75, 172);
+    margin-bottom: 50px; */
+}
+
+#delete{
+    margin-left: 75px;
+}
+
