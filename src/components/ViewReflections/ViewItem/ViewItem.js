@@ -19,7 +19,7 @@ class ViewItem extends Component {
                 
                     <div className = "buttonClass">
                         <DeleteButton id="delete" listItem = {this.props.listItem}/>
-                        <ToggleButton id='bookmark' listItem={this.props.listItem} />
+                        <ToggleButton id="bookmark" listItem={this.props.listItem} />
                     </div>
 
                 </div>

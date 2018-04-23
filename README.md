@@ -1,10 +1,11 @@
 # OH, THE PLACES WE'VE BEEN
 
-Reflection is an important part of building applications and working with a team. It's common to have a retrospective on a bi-weekly basis during a project and at the end of a project. As we approach the end of teir 2, we would like you to reflect on everthing you've accomplished. For this assignment, you will be creating a reflection board. There should be two views, one to add a reflection and another to display reflections that you've added (most recent at the top). You should also be able to remove a reflection.
+Reflection is an important part of building applications and working with a team. It's common to have a retrospective on a bi-weekly basis during a project and at the end of a project. This application allows the user to enter in a new reflection and view all reflections. Users are able to delete reflections that may no longer be relevant and bookmark favorite reflections.
+
 
 ### SETUP
 
-Create your database and tables using the provided `data.sql` file. Start the server.
+Database and table information is prodivide in the `data.sql` file. Start the server.
 
 ```
 npm install
@@ -17,37 +18,22 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 npm run client
 ```
 
+### TO ADD A NEW REFLECTION
 
-- [x] Create a form that allows users to add a new reflection. 
-- [x] A new reflection should be added in the database with the current date by default. 
-- [x] Display a list of the existing reflections. 
-- [x] The most recently added reflection should appear at the top of the list.
-- [x] Allow the user to delete existing reflections. 
-- [x] Prompt the user to confrim prior to deleting the reflection from the database. 
-- [] Add a button that allows users to bookmark a reflection.
-
-### ADD NEW REFLECTION
-
-
-Create a form that allows users to add a new reflection. A new reflection should be added in the database with the current date by default. 
+Click on the "Add a reflection link". You can enter in a new reflection topic and description.  The date is automatically entered and all new reflections are not bookmarked on submission.
 
 ![add new reflection](wireframes/screen-one.png)
 
-### DISPLAY REFLECTIONS
+### TO VIEW ALL REFLECTIONS
 
-Display a list of the existing reflections. The most recently added reflection should appear at the top of the list. Allow the user to delete existing reflections. Prompt the user to confrim prior to deleting the reflection from the database. Add a button that allows users to bookmark a reflection.
+The "View all reflections" will show all reflections; they are ordered from newest to oldest. You are able to delete a reflection by clicking the track icon. You can bookmark a reflection but clicking on the bookmark icon. Bookmarked reflections will display as solid bookmarks, while un-bookmarked reflections display with the bookmark boarder.
 
 ![display reflections](wireframes/screen-two.png)
 
 ## FUTURE FEATURES
-
-- Update this README.md to describe the project in your own words
-- Deploy your project to Heroku
-- Improve the stying of the app using Material-UI cards, buttons, nav bar and icons
-- Move your HTTP requests into sagas
-- Add the ability to update an existing reflection
-- Move reflection topics into a separate table and use SQL JOINs
-- Allow users to include an image with the reflection using [Filestack](https://www.filestack.com/)
-- Ability to filter reflections based on topic
-
-> NOTE: These stretch goals are intended to be completed in order.
+ 
+ Future features I would like to add to the project include
+- Deploy this project to Heroku.
+- Add additional styling elements - specifically cards and a nav bar.
+- Allow users to to update an existing reflection.
+- Ability to filter reflections based on topic.
