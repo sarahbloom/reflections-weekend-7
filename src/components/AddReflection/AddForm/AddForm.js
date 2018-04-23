@@ -44,14 +44,14 @@ class AddReflection extends Component{
             <div>
                 <form onSubmit={this.addNewReflection}>
                     <h4> Topic: </h4>
-                    <input type="text"
+                    <textarea rows='2' cols='100'type="text"
                             value={this.state.newReflection.topic} 
                             onChange={this.handleNameChange('topic')} />
                     
                     <h4> Description: </h4>
                     {/* TODO: make a fixed text area */}
                     {/* <textarea rows="7" cols="60" > */}
-                    <input type="text" onChange={this.handleNameChange('description')} 
+                    <textarea rows='20' cols='100' type="text" onChange={this.handleNameChange('description')} 
                             value={this.state.newReflection.description}/>
                     {/* </textarea> */}
                     <br/>
