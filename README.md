@@ -2,6 +2,8 @@
 
 Reflection is an important part of building applications and working with a team. It's common to have a retrospective on a bi-weekly basis during a project and at the end of a project. This application allows the user to enter in a new reflection and view all reflections. Users are able to delete reflections that may no longer be relevant and bookmark favorite reflections.
 
+This project was created using React.js, Express, SQL, Node.js, and Material-UI.
+
 
 ### SETUP
 
