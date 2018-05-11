@@ -12,7 +12,7 @@ class App extends Component {
           <header className="App-header">
             <h1 className="App-title">Oh, the places you've been</h1>
             <h4><i>Reflection Board</i></h4>
-            <Link to='/'>Add a reflection </Link>
+            <Link to='/'>Add a reflection </Link> &nbsp;
             <Link to='/view'>View all reflections </Link>
           </header>
           <br/>

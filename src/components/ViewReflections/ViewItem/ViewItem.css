@@ -1,27 +1,15 @@
 .textClass {
     float: left;
-    height: 250px;
-    width: 250px;
-    background-color: rgb(166, 105, 235);
-    margin-left: 10px;
-    margin-top: 10px;
+    text-align: "center";
+    margin-bottom: 15px;
+    margin-left: 15px;
 }
-
-/* TODO: figure out spacing */
 
 .buttonClass {
     align-content: center;
     display: flex;
     flex-direction: row;
     margin-bottom: 0px;
-    /* background-color: rgb(120, 75, 172);
-    margin-bottom: 50px; */
+    /* margin-left: 100px; */
 }
 
-#delete {
-    margin-left: 75px;
-}
-
-#bookmark{
-    margin-left: 75px;
-}

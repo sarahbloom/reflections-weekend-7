@@ -21,7 +21,6 @@ class ReflectionsList extends Component {
 
         return (
             <div>
-                <p>all reflections will display here</p>
                 {ReflectionListArray}
             </div>
         )

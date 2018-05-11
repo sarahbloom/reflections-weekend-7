@@ -24,7 +24,7 @@ export function* postReflectionSaga(action) {
             type: 'FETCH_REFLECTIONS'
         })
     } catch (err) {
-        console.log('error in PUT new reflection', err);
+        console.log('error in POST new reflection', err);
     }
 }// end postReflectionSaga
 

@@ -5,12 +5,9 @@ import IconButton from 'material-ui/IconButton';
 import { Delete } from 'material-ui-icons';
 import axios from 'axios';
 
-import Dialog, {
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-} from 'material-ui/Dialog';
+import Dialog,
+{ DialogActions, DialogContent, DialogContentText, DialogTitle }
+    from 'material-ui/Dialog';
 
 class DeleteButton extends Component{
     constructor(props) {
@@ -51,17 +48,17 @@ class DeleteButton extends Component{
             <Dialog
                 open={this.state.open}
                 onClose={this.handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
+                aria-labelledby="alert--title"
+                aria-describedby="alert--description"
             >
-                <DialogTitle id="alert-dialog-title">
+                <DialogTitle id="alert--title">
                     {"Please confirm you want to delete the reflection"}
                 </DialogTitle>
 
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
+                    <DialogContentText id = "alert--description" >
                         You are not able to recover the reflection once it has been deleted.
-                                    </DialogContentText>
+                    </DialogContentText>
                 </DialogContent>
 
                 <DialogActions>
