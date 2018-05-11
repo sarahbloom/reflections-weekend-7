@@ -1,13 +1,26 @@
 import { call, put } from 'redux-saga/effects';
 import axios from 'axios'
 
-//get reflections currently in the DB
+//Bookmark a specific saga by updating database
+export function* bookmarkReflectionSaga(action){
+    console.log('bookmarkReflectionSaga', action);
+    try {
+        yield call(axios.put, `/api/view/${action.payload.id}`, action.payload)
+        yield put({
+            type: 'FETCH_REFLECTIONS',
+        })   
+    } catch (error) {
+        console.log('Error in PUT update bookmark status', error);
+    }
+}//end bookmarkReflectionSaga
+
+//get reflections currently in the database
 export function* getReflectionSaga(action) {
-    console.log(action);
+    // console.log('getReflectionSaga', action);
     try {
         const reflectionResponse = yield call(axios.get, '/api/view');
         yield put({
-            type: "DISPLAY_REFLECTIONS",
+            type: 'DISPLAY_REFLECTIONS',
             payload: reflectionResponse.data
         })
     } catch (error) {
@@ -15,9 +28,9 @@ export function* getReflectionSaga(action) {
     }
 }//end getReflectionSaga
 
-//add a new reflection to the DB
+//add a new reflection to the database
 export function* postReflectionSaga(action) {
-    // console.log(action);
+    // console.log('postReflectionSaga', action);
     try {
         yield call(axios.post, '/api/add', action.payload);
         yield put({
