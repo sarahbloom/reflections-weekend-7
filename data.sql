@@ -1,7 +1,6 @@
 -- Database should be reflection_board
 CREATE DATABASE "reflection_board";
 
--- Switch to "reflection_board" before running the following
 -- Table to store the reflections
 CREATE TABLE "reflection" (
   "id" serial primary key,

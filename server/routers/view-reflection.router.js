@@ -14,7 +14,10 @@ router.get('/', (req, res)=>{
 
 //DELETE reflection from databse
 router.delete('/:id', (req, res)=>{
+    console.log('delete router');
+    
     const reflectionId = req.params.id;
+    // console.log('DELETE', reflectionId);
     let queryText = `DELETE FROM "reflection" WHERE "id" = $1;`;
     pool.query(queryText,[reflectionId])
         .then((result) => {
@@ -26,12 +29,13 @@ router.delete('/:id', (req, res)=>{
 })//end DELETE
 
 //toggle Bookmark true/false in SQL
-router.put('/', (req, res)=>{
-    console.log('put request', req.body)
+router.put('/:id', (req, res)=>{
+    // console.log('put request', req.body)
     let reflectionToUpdate = req.body;
     let queryText = `UPDATE "reflection" SET "bookmarked" = $1 WHERE "id" = $2;`;
     pool.query(queryText, [reflectionToUpdate.bookmarked, reflectionToUpdate.id])
         .then((result) => {
+            console.log('PUT outcome', reflectionToUpdate);
             res.sendStatus(200);
         }).catch((err) => {
             console.log('error in PUT - updating bookmark:', err);

@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import { Delete } from 'material-ui-icons';
-import axios from 'axios';
-
 import Dialog,
 { DialogActions, DialogContent, DialogContentText, DialogTitle }
     from 'material-ui/Dialog';
@@ -17,27 +15,22 @@ class DeleteButton extends Component{
         };
     }//end constructor
 
+    //used to open and close dialog box prompt
     handleClickOpen = () => {
         this.setState({ open: true });
     };
-
     handleClose = () => {
         this.setState({ open: false });
     };
 
+    //delete a reflection
     deleteReflection = (reflectionToDelete) => {
         this.setState({ open: false });
-        console.log('clicked delete', this.props.listItem.id);
-        axios.delete(`/api/view/${this.props.listItem.id}`)
-            .then((response) => {
-                console.log('reflection deleted');
-                this.props.dispatch({
-                    type: "DISPLAY_UPDATED_REFLECTIONS",
-                    payload: this.props.listItem.id
-                })
-            }).catch((err) => {
-                console.log('error in delete', err);
-            })
+        console.log('clicked delete button');
+        this.props.dispatch({
+            type: 'DELETE_REFLECTION',
+            payload: this.props.listItem
+        })
     }// end deleteReflection
 
     render(){
