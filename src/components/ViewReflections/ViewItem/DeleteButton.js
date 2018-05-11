@@ -15,14 +15,15 @@ class DeleteButton extends Component{
         };
     }//end constructor
 
+    //used to open and close dialog box prompt
     handleClickOpen = () => {
         this.setState({ open: true });
     };
-
     handleClose = () => {
         this.setState({ open: false });
     };
 
+    //delete a reflection
     deleteReflection = (reflectionToDelete) => {
         this.setState({ open: false });
         console.log('clicked delete button');
@@ -30,17 +31,6 @@ class DeleteButton extends Component{
             type: 'DELETE_REFLECTION',
             payload: this.props.listItem
         })
-        
-        // axios.delete(`/api/view/${this.props.listItem.id}`)
-        //     .then((response) => {
-        //         console.log('reflection deleted');
-        //         this.props.dispatch({
-        //             type: "DISPLAY_UPDATED_REFLECTIONS",
-        //             payload: this.props.listItem.id
-        //         })
-        //     }).catch((err) => {
-        //         console.log('error in delete', err);
-        //     })
     }// end deleteReflection
 
     render(){

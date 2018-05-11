@@ -20,7 +20,6 @@ export function* deleteReflectionSaga(action){
         yield call(axios.delete, `/api/view/${action.payload.id}`)
         yield put({
             type: 'FETCH_REFLECTIONS',
-            // payload: action.payload
         })
     } catch (error) {
         console.log('Error in DELETE bookmark', error);
