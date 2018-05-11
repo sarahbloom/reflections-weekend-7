@@ -14,6 +14,19 @@ export function* bookmarkReflectionSaga(action){
     }
 }//end bookmarkReflectionSaga
 
+//delete a reflection
+export function* deleteReflectionSaga(action){
+    try {
+        yield call(axios.delete, `/api/view/${action.payload.id}`)
+        yield put({
+            type: 'FETCH_REFLECTIONS',
+            // payload: action.payload
+        })
+    } catch (error) {
+        console.log('Error in DELETE bookmark', error);
+    }
+}
+
 //get reflections currently in the database
 export function* getReflectionSaga(action) {
     // console.log('getReflectionSaga', action);
