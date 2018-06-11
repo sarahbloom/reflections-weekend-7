@@ -1,18 +1,18 @@
 # OH, THE PLACES WE'VE BEEN
 
-This application was completed with React using reducers and sagas, SQL, Express, and Node.js. 
+This application was completed with React using reducers and sagas, SQL, Express, and Node.js. This was the final (seventh) weekend project at Prime Digital Academy.
 
-This application allows the user to enter in a new reflection and view all reflections. Users are able to delete reflections that may no longer be relevant and bookmark favorite reflections. Reflections can be about professional experiences - the successes and learning opportunities from working on a group project - or personal experiences - the ups and downs of learning how to cook.
+This application allows a user to enter in a new reflection and view all reflections. Users are able to delete and bookmark reflections. Reflections can be about professional experiences - the successes and learning opportunities from working on a group project - or personal experiences - the ups and downs of learning how to cook.
 
 ### ADD A REFLECTION
 
-Click on the "Add a reflection link". You can enter in a new reflection topic and description. The date is automatically entered when the user submits a reflection. In addition, there will be icons to delete and bookmark the reflection. Reflection are not bookmarked on submission.
+The "Add a Reflection" link allows a user to add a new reflection. A user enters a new reflection topic and description. The date is automatically added to the reflection and database when the user submits a reflection. In addition, there will be icons to delete and bookmark the reflection. Reflection are not bookmarked on submission.
 
 ![add new reflection](public/images/add-reflection.png)
 
 ### VIEW ALL REFLECTIONS
 
-The "View all reflections" will show all reflections; they are ordered from newest to oldest. You are able to delete a reflection by clicking the trashcan icon; a dialog box will promp you to confirm you would like to delete the reflection. You can bookmark a reflection but clicking on the bookmark icon. Bookmarked reflections will display as solid bookmarks, while un-bookmarked reflections display with the bookmark boarder.
+"View All Reflections" will show all of a user's reflections; they are ordered from newest to oldest. A user can delete a reflection by clicking the trashcan icon; a dialog box will promp a user to confirm they would like to delete the reflection. A user can bookmark a reflection but clicking on the bookmark icon. Bookmarked reflections will display as solid bookmarks, while un-bookmarked reflections display with only the bookmark boarder.
 
 ![view all reflections](public/images/view-reflections.png)
 
@@ -34,7 +34,7 @@ This application was created with the following:
 * Run `npm run client`
 * You should be automatically directed to `localhost:3000`. If this does not happen, navigate to `localhost:3000`.
 
-## To Create the Database and Tables with PostgreSQL
+## Create the Database and Table with PostgreSQL
 
 Create a new database called `reflection_board` and a table called `reflection`.
 
@@ -49,7 +49,7 @@ CREATE TABLE "reflection" (
   "date" date not null default CURRENT_DATE
 );
 ```
-Sample data is available in data.sql.
+Sample data is available in data.sql file.
 
 ## FUTURE FEATURES
  
